@@ -11,7 +11,7 @@
   }
   {
     'match': '^\\s?\\.(db|equ|def|include|org)\\b'
-    'name': 'entity.name.type'
+    'name': 'entity.name.function'
   }
   {
     'begin': '"'
@@ -42,7 +42,7 @@
   }
   {
     'match': '^\\s*([^\\r\\n\\t\\f :]*:)[\\t ]*(?:$|;)'
-    'name': 'entity.name.function'
+    'name': 'entity.name.type'
   }
   {
     'match': '\\$(0[bx])?[0-9a-fA-F]+\\b'
