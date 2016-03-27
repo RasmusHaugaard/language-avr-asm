@@ -1,6 +1,6 @@
 {
   "name": "language-avr-asm",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Adds syntax highlighting to avr-asm files in Atom.",
   "keywords": [
     "avr",
