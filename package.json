@@ -1,0 +1,20 @@
+{
+  "name": "language-avr-asm",
+  "version": "0.0.1",
+  "description": "Adds syntax highlighting to avr-asm files in Atom.",
+  "keywords": [
+    "avr",
+    "asm",
+    "assembler",
+    "language",
+    "grammar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasmushaugaard/language-avr-asm.git"
+  },
+  "license": "GPLv3",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}
