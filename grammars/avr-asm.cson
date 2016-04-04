@@ -1,17 +1,41 @@
-'scopeName': 'source.avr.asm'
+'scopeName': 'source.avra.asm'
 'fileTypes': [
   'inc'
   'asm'
 ]
-'name': 'avr-asm'
+'name': 'avra-asm'
 'patterns': [
   {
     'match': '[;#].*$'
     'name': 'comment.line'
   }
   {
-    'match': '^\\s*\\.(db|equ|set|def|include|org|macro|endm)\\b'
+    'match': '^\\s*\\.(db|equ|set|def|define|include|org|macro|endm|device|ifdef|ifndef|if|else|endif|elif|elseif|warning)\\b'
     'name': 'entity.name.function'
+  }
+  {
+    'match': '(?i)^[\t ]*(add|adc|adiw|sub|subi|sbc|sbci|sbiw|and|andi|or|ori|eor|com|neg|sbr|cbr|inc|dec|tst|clr|ser|mul|muls|mulsu|fmul|fmuls|fmulsu|rjmp|ijmp|jmp|rcall|icall|call|ret|reti|cpse|cp|cpc|cpi|sbrc|sbrs|sbic|sbis|brbs|brbc|breq|brne|brcs|brcc|brsh|brlo|brmi|brpl|brge|brlt|brhs|brhc|brts|brtc|brvs|brvc|brie|brid|sbi|cbi|lsl|lsr|rol|ror|asr|swap|bset|bclr|bst|bld|sec|clc|sen|cln|sez|clz|sei|cli|ses|cls|sev|clv|set|clt|seh|clh|mov|movw|ldi|ld|ldd|lds|st|std|sts|lpm|spm|in|out|push|pop|nop|sleep|wdr|break)\\b'
+    'name': 'keyword.mnemonic'
+  }
+  {
+    'match': '(?i)\\b(r([0-9]|[12][0-9]|3[01])|x|xl|xh|y|yl|yh|z|zl|zh)\\b'
+    'name': 'entity.name.tag'
+  }
+  {
+    'match': '^\\s*([^\\r\\n\\t\\f :]*:)[\\t ]*(?=$|;)'
+    'name': 'entity.name.type'
+  }
+  {
+    'match': '\\$(0[bx])?[0-9a-fA-F]+\\b'
+    'name': 'constant.numeric.literal'
+  }
+  {
+    'match': '\\b[0-9]+\\b'
+    'name': 'constant.numeric.dec'
+  }
+  {
+    'match': '\\b($[0-9a-fA-F]+h?|0x[0-9a-fA-F]+)\\b'
+    'name': 'constant.numeric.hex'
   }
   {
     'begin': '"'
@@ -31,29 +55,5 @@
         'include': '#string_placeholder'
       }
     ]
-  }
-  {
-    'match': '[^\\.]\\b(?i)(add|adc|adiw|sub|subi|sbc|sbci|sbiw|and|andi|or|ori|eor|com|neg|sbr|cbr|inc|dec|tst|clr|ser|mul|muls|mulsu|fmul|fmuls|fmulsu|rjmp|ijmp|jmp|rcall|icall|call|ret|reti|cpse|cp|cpc|cpi|sbrc|sbrs|sbic|sbis|brbs|brbc|breq|brne|brcs|brcc|brsh|brlo|brmi|brpl|brge|brlt|brhs|brhc|brts|brtc|brvs|brvc|brie|brid|sbi|cbi|lsl|lsr|rol|ror|asr|swap|bset|bclr|bst|bld|sec|clc|sen|cln|sez|clz|sei|cli|ses|cls|sev|clv|set|clt|seh|clh|mov|movw|ldi|ld|ldd|lds|st|std|sts|lpm|spm|in|out|push|pop|nop|sleep|wdr|break)\\b'
-    'name': 'keyword.mnemonic'
-  }
-  {
-    'match': '\\b(?i)(r([0-9]|[12][0-9]|3[01])|x|xl|xh|y|yl|yh|z|zl|zh)\\b'
-    'name': 'entity.name.tag'
-  }
-  {
-    'match': '^\\s*([^\\r\\n\\t\\f :]*:)[\\t ]*(?:$|;)'
-    'name': 'entity.name.type'
-  }
-  {
-    'match': '\\$(0[bx])?[0-9a-fA-F]+\\b'
-    'name': 'constant.numeric.literal'
-  }
-  {
-    'match': '\\b[0-9]+\\b'
-    'name': 'constant.numeric.dec'
-  }
-  {
-    'match': '\\b($[0-9a-fA-F]+h?|0x[0-9a-fA-F]+)\\b'
-    'name': 'constant.numeric.hex'
   }
 ]
