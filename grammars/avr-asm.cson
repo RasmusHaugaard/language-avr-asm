@@ -2,6 +2,7 @@
 'fileTypes': [
   'inc'
   'asm'
+  'avr'
 ]
 'name': 'avra-asm'
 'patterns': [
